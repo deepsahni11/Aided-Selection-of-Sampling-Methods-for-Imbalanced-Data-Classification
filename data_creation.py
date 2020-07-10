@@ -13,10 +13,6 @@ from sklearn.model_selection import StratifiedShuffleSplit
 from numpy import save
 from numpy import load
 
-
-
-
-
 seed = 0
 
 #### Every dataset has been labelled using this sequence 
@@ -38,16 +34,10 @@ num_repeated = 0
 num_redundant = 0
 weights = [[0.9,0.1],[0.8,0.2],[0.7,0.3],[0.6,0.4]]
 
-
-
-
-
 X_train_datasets_unsampled = []
 y_train_datasets_unsampled = []
 X_test_datasets_unsampled = []
 y_test_datasets_unsampled = []
-
-
 
 c = 0
 
@@ -56,15 +46,11 @@ for w in weights:
         for num_i in num_informative:
             for cs in class_separation:
                 for num_c in num_clusters:
-
-
-                    
+                
                     X,y = make_classification(n_samples=num_datapoints, n_features=num_features, n_informative=num_i, 
                                         n_redundant=num_redundant, n_repeated=num_repeated, n_classes=num_classes, n_clusters_per_class=num_c,
                                            class_sep=cs,
                                        flip_y=f,weights=w, random_state = random_seed)
-
-
 
                     sss = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=0)
                     sss.get_n_splits(X, y)
@@ -77,15 +63,9 @@ for w in weights:
                         y_train_datasets_unsampled.append(ytrain)
                         X_test_datasets_unsampled.append(Xtest)
                         y_test_datasets_unsampled.append(ytest)
-                        
-                        
-                       
-                            
+                           
                     c = c+1
-                    
-
-                        
-
+                                         
 np.save('../Code_github/datasets_X_train_unsampled.npy',X_train_datasets_unsampled)
 np.save('../Code_github/datasets_X_test_unsampled.npy',X_test_datasets_unsampled)
 np.save('../Code_github/datasets_y_train_unsampled.npy',y_train_datasets_unsampled)
