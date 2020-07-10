@@ -29,10 +29,7 @@ for b in range(len(training_x)): # number of bootstrapped samples
 
     predictions_recall = []
 
-    
-  
 
-  
     c = 1
     for p in [20]: 
         for q in [15]: 
@@ -58,7 +55,5 @@ for b in range(len(training_x)): # number of bootstrapped samples
 
                 
                 c= c +1
-
-
 
     np.save("../Code_github/recall_predictions_bootstrap_" + str(b) + ".npy" , predictions_recall)
