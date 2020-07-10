@@ -29,9 +29,7 @@ for b in range(len(training_x)): # number of bootstrapped samples
 
     predictions_precision = []
 
-    
-   
-  
+
     c = 1
     for p in [20]: 
         for q in [15]: 
@@ -43,7 +41,6 @@ for b in range(len(training_x)): # number of bootstrapped samples
                                batch_size= 64,
                                max_iter=500)
             
-
             for i in range(21):
                 predictions = []
                 reg.fit(Xtrain, ytrain[:,i])
@@ -57,7 +54,6 @@ for b in range(len(training_x)): # number of bootstrapped samples
 
                 
                 c= c +1
-
 
 
     np.save("../Code_github/precision_predictions_bootstrap_" + str(b) + ".npy" , predictions_precision)
