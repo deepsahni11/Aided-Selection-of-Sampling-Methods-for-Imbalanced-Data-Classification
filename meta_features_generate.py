@@ -31,8 +31,6 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.feature_selection import mutual_info_regression
 
 
-
-
 def evalSampling(sampler, classifier, Xtrain, Xtest,ytrain, ytest):
     """Evaluate a sampling method with a given classifier and dataset
     
@@ -62,11 +60,7 @@ def evalSampling(sampler, classifier, Xtrain, Xtest,ytrain, ytest):
 
     precision = precision_score(yt, yp)
     recall    = recall_score(yt, yp)
-#     f1        = f1_score(yt, yp)
-#     rocauc    = roc_auc_score(yt, yProb)
-#     kappa     = cohen_kappa_score(yt, yp)
-#     gmean     = geometric_mean_score(yt, yp)
-    
+
     return (precision, recall, _, _, _, _)
 
 
@@ -87,87 +81,6 @@ def extractStandardMeasures(X, y):
     c = len(set(y))
     
     return (N, d, c)
-
-
-
-# def extractStatsMeasures(X, y):
-#     """Extracts the standard measures of the given dataset
-    
-#     Keyword arguments:
-#     X -- Design matrix (feature set)
-#     y -- Label vector
-    
-#     Returns:
-#     A tuple (rho, rs, I, sw, ad) where 
-#     rho -- Pearson correlation coefficient
-#     rs -- Spearman coefficient
-#     I -- Mutual information
-#     sw -- Shapiro-Wilk test for normality
-#     nt -- D'Agostino-Pearson test for normality
-#     sdr -- Non-homogeneity measure: it works well for data that is multivariate gaussian "CHECK" 
-#     """
-    
-#     rho = np.corrcoef(X, rowvar=False) # Pearson Correlation Coefficient
-#     rs,_ = stats.spearmanr(X) # Spearman Correlation Coefficient
-    
-#     I = [] # Mutual Information
-#     for c in range(X.shape[1]): # For every column
-#         I.append(mutual_info_regression(X, X[:,c]))
-#     I = np.array(I)
-    
-#     sw = stats.shapiro(X) # Shapiro-Wilk test
-#     nt = stats.normaltest(X) # D'Agostino-Pearson test
-    
-#     # Homogeneity of Class Covariance Matrices
-#     (N, d, c) = extractStandardMeasures(X, y)
-#     classList = list(set(y))
-#     Ni = []
-#     Si_inv = []
-#     for className in classList:
-#         idx = y==className
-#         Ni.append(sum(idx))
-#         Si_inv.append(np.linalg.inv(np.cov(X[idx,:], rowvar=False)))
-#     S = np.cov(X, rowvar=False)
-    
-#     t1 = sum([1/(x-1) for x in Ni])
-#     t2 = 1/(N-c)
-#     gamma = 1 - (2*d*d + 3*d - 1) * (t1 - t2) / (6*(d+1)*(c-1))
-    
-#     t3 = 0
-#     for i in range(c):
-#         t3 += (Ni[i] - 1)*np.log(np.linalg.det(np.dot(Si_inv[i], S)))
-    
-#     M = gamma * t3
-#     sdr = np.exp(M / (d * sum([(x-1) for x in Ni])))
-    
-#     return rho, rs, I, sw, nt, sdr
-
-
-
-
-# def extractDataSparesness(X, y):
-#     """Extract the data sparsity ratio of the given datasetc "CHECK" this measure beacuse rs.correlation does not work for mutivariate data
-    
-#     Keyword arguments:
-#     X -- Design matrix (feature set)
-#     y -- Label vector
-    
-#     Returns:
-#     The data sparsity ratio (N/Nm)
-#     """
-#     (N, d, c) = extractStandardMeasures(X, y)
-#     (rho, rs, I, sw, nt, sdr) = extractStatsMeasures(X, y)
-    
-#     if rs.correlation <= 0.7: # for Normal and uncorrelated data 
-#         Nm = 2*d*c + c
-#     elif sdr < 1.5: # for Normal and correlated data with homogeneous covariance matrix 
-#         Nm = d*d + d*c + c
-#     else:    # for Normal and correlated data with non-homogenous covariance matrix
-#         Nm = c*N*N + N*c + c
-    
-#     return N/Nm
-
-
 
 
 import sys
@@ -384,10 +297,8 @@ def volume_overlap(X,y):
         
         
     return voverlap
-        
-        
-            
-
+ 
+    
 X_train_datasets = load('../Code_github/datasets_X_train_unsampled.npy',allow_pickle = True)
 y_train_datasets = load('../Code_github/datasets_y_train_unsampled.npy',allow_pickle = True)
 
@@ -425,7 +336,7 @@ for j in range(0,14*len(X_train_datasets),14):
         c = c+1
         j = j+1
         
-    counter = counter  +1
+    counter = counter +1
 
 
 np.savetxt('../Code_github/data_metrics.csv', matrix.tolist() ,delimiter=',',fmt='%f')
