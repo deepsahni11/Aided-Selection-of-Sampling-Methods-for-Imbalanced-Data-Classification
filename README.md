@@ -40,5 +40,5 @@ Metrics | Values |
  ```
  
  ```
-
+![alt text](https://github.com/deepsahni11/Aided-Selection-of-Sampling-Methods-for-Imbalanced-Data-Classification/blob/master/Framework_draft_final.jpg?raw=true)
 
