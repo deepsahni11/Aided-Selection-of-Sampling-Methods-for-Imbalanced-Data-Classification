@@ -22,7 +22,6 @@
 
 ```
 Create synthetic datasets using the parameters from make_classification python package as given below in the table: 
-
 ```
 Metrics | Values |
 --- | --- | 
@@ -39,7 +38,7 @@ Metrics | Values |
  
  ```
  The imbalanced datasets are resampld using the 20 sampling methods we have taken as described in the figure below:
- 
+
  ```
  
  <img src="Sampling_methods_draft10.jpg" height="400" width="600">
