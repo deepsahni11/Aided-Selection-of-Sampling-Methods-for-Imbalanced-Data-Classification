@@ -31,12 +31,24 @@ Metrics | Values |
  Number of features (n)  | 4, 6, 8, 9, 10, 11, 13, 15 | 
  Informative features | n-2, n-1, n  |
  Class separation | 0.3, 0.65, 1.0, 1.35, 1.7 |
- Number of clusters per class | 1, 2 for $n$ = 4 and 1, 2, 3 for rest |
+ Number of clusters per class | 1, 2 for n = 4 and 1, 2, 3 for rest |
  Number of classes | 2|
  Imbalance ratio between the two classes | 0.9:0.1, 0.8:0.2, 0.7:0.3, 0.6:0.4 |
  
  2.  Re-sampling of the imbalanced datasets
  
+ ```
+ The imbalanced datasets are resampld using the 20 sampling methods we have taken as described in the figure below:
+ 
+ ```
+ 
  <img src="Sampling_methods_draft10.jpg" height="400" width="600">
+ 
+ 
+ 3. Generate meta-features for each dataset
+ 
+ ```
+ 
+ ```
  
  
