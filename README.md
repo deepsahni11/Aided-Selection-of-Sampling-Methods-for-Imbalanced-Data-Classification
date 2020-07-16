@@ -37,9 +37,6 @@ Metrics | Values |
  
  2.  Re-sampling of the imbalanced datasets
  
- ```
- nn
- ```
- - `![](https://github.com/deepsahni11/Aided-Selection-of-Sampling-Methods-for-Imbalanced-Data-Classification/blob/master/Framework_draft_final.jpg =250x250)`
-
-<img alt="" data-canonical-src="github.com/deepsahni11/Aided-Selection-of-Sampling-Methods-for-Imbalanced-Data-Classification/blob/master/Framework_draft_final.jpg" width="200" height="400" />
+ <img src="Framework_draft_final.jpg" height="200" width="200">
+ 
+ 
