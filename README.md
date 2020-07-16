@@ -43,11 +43,30 @@ Metrics | Values |
  
  <img src="Sampling_methods_draft10.jpg" height="400" width="600">
  
- 
- 3. Generate meta-features for each dataset
- 
- ```
+ 3. Calculate precision-recall values from classifiers 
  
  ```
+ The classifiers predict precision and recall scores for all the re-sampled synthetic datasets generated. These precision-recall values act as target values(Y) for the main regressor model of our architecture.
+ ```
  
  
+ 4. Generate meta-features for each dataset
+ 
+ ```
+ We use 8 meta-features, wherein 7 of them are data-characterising measures and the 8th one is the probability threshold. These meta-features act as training data (X) for the regressor model.
+ ```
+Meta- features | 
+--- |  
+Linear Separability |
+Number of hyper-spheres |
+Samples per hyper-sphere |
+Number of inter-class connections |
+Decision boundary complexity  |
+Inter-class distance |
+Volume of overlap region |
+Probability threshold |
+ 
+5. Regressor Model
+```
+We train the regressor model using meta-features(X) and observed precision-recall scores (Y). The trained regressor model takes as input, meta-features from any dataset and outputs predicted precision & recall scores for all the combinations of sampling method and probability threshold.
+```
