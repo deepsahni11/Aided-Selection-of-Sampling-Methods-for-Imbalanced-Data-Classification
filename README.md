@@ -37,6 +37,6 @@ Metrics | Values |
  
  2.  Re-sampling of the imbalanced datasets
  
- <img src="Framework_draft_final.jpg" height="200" width="200">
+ <img src="Sampling_methods_draft10.jpg" height="400" width="600">
  
  
