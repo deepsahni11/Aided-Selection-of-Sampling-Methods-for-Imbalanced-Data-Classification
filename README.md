@@ -29,7 +29,7 @@
 ```
 Create synthetic datasets using the parameters from make_classification python package as given below in the table: 
 ```
-
+<center>
 
 Metrics | Values |
 --- | --- | 
@@ -42,7 +42,7 @@ Metrics | Values |
  Number of classes | 2|
  Imbalance ratio between the two classes | 0.9:0.1, 0.8:0.2, 0.7:0.3, 0.6:0.4 |
  
-
+</center>
  
  2.  Re-sampling of the imbalanced datasets
  
@@ -66,6 +66,8 @@ Metrics | Values |
  We use 8 meta-features, wherein 7 of them are data-characterising measures and the 8th one is the probability threshold. These meta-features act as training data (X) for the regressor model.
  
 
+
+<center>
  
 Meta- features | 
 --- |  
@@ -78,7 +80,7 @@ Inter-class distance |
 Volume of overlap region |
 Probability threshold |
 
-
+</center>
  
 5. Regressor Model
 
