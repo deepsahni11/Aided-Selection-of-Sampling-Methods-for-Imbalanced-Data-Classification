@@ -9,6 +9,7 @@
 * classifier_predictions.py -> calculates probability predictions for resampled data
 * prediction_recall_classifier_predictions.py -> calculates precision-recall measures from probability predictions
 * generate_bootstrap_samples.py -> creates bootstrap samples: X (meta-features) & Y (precision-recall measures)
+* regressor_predictions_save_model.py -> the regressor model predicts precision and recall scores for each dataset for a combination of sampling method and probability threshold
 
 
 ## Usage
